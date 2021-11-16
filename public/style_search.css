@@ -1,0 +1,185 @@
+form {
+    position: relative;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+input, button {
+    border: none;
+    outline: none;
+}
+
+input {
+    width: 100%;
+    height: 42px;
+    padding-left: 13px;
+}
+
+button {
+    height: 42px;
+    width: 42px;
+    cursor: pointer;
+    position: absolute;
+}
+
+input {
+    border: 2px solid #7BA7AB;
+    border-radius: 5px;
+    background: #F9F0DA;
+    color: #9E9C9C;
+}
+button {
+    top: 0;
+    right: 0;
+    background: #7BA7AB;
+    border-radius: 0 5px 5px 0;
+}
+button:before {
+    content: "GO";
+    font-family: FontAwesome;
+    font-size: 16px;
+    color: #F9F0DA;
+}
+
+.list {
+    margin: 50px 220px 0px;
+}
+
+.shop1 {
+    width: auto;
+    height: 170px;
+    margin: 20px;
+    background-color: indianred;
+}
+
+.history {
+    margin: 0px 220px 20px;
+    width: auto;
+    height: 200px;
+}
+
+.shop2 {
+    margin: 10px;
+    width: 14%;
+    height: 170px;
+    background-color: khaki;
+    display: inline;
+    float: left;
+}
+
+.down{
+    height: 300px;
+    transform: scaleY(0);
+    transition: transform 0.8s;
+    transform-origin: bottom center;
+    background-color: hsl(2, 57%, 40%);
+    background-image: repeating-linear-gradient(transparent, transparent 50px, rgba(0,0,0,.4) 50px, rgba(0,0,0,.4) 53px, 
+    transparent 53px, transparent 63px, rgba(0,0,0,.4) 63px, rgba(0,0,0,.4) 66px, transparent 66px, transparent 116px, 
+    rgba(0,0,0,.5) 116px, rgba(0,0,0,.5) 166px, rgba(255,255,255,.2) 166px, rgba(255,255,255,.2) 169px, 
+    rgba(0,0,0,.5) 169px, rgba(0,0,0,.5) 179px, rgba(255,255,255,.2) 179px, rgba(255,255,255,.2) 182px, 
+    rgba(0,0,0,.5) 182px, rgba(0,0,0,.5) 232px, transparent 232px),
+    repeating-linear-gradient(270deg, transparent, transparent 50px, rgba(0,0,0,.4) 50px, rgba(0,0,0,.4) 53px, 
+    transparent 53px, transparent 63px, rgba(0,0,0,.4) 63px, rgba(0,0,0,.4) 66px, transparent 66px, transparent 116px, 
+    rgba(0,0,0,.5) 116px, rgba(0,0,0,.5) 166px, rgba(255,255,255,.2) 166px, rgba(255,255,255,.2) 169px, 
+    rgba(0,0,0,.5) 169px, rgba(0,0,0,.5) 179px, rgba(255,255,255,.2) 179px, rgba(255,255,255,.2) 182px, 
+    rgba(0,0,0,.5) 182px, rgba(0,0,0,.5) 232px, transparent 232px),
+    repeating-linear-gradient(125deg, transparent, transparent 2px, rgba(0,0,0,.2) 2px, rgba(0,0,0,.2) 3px, 
+    transparent 3px, transparent 5px, rgba(0,0,0,.2) 5px);
+}
+
+.active {
+    height: 300px;
+    transform: scaleY(1);
+    transition: transform 0.8s;
+    transform-origin: bottom center;
+}
+
+p {
+    display: inline-table;
+    margin: 10px 100px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    margin: 0;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: url("./imgsrc/background.jpg");
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+}
+ 
+.navbar a {
+    float: right;
+    display: block;
+    color: #838282;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+ 
+.navbar a.left {
+    float: left;
+    font-size: 30px;
+}
+
+.navbar a:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(247, 217, 86);
+}
+ 
+.row {  
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+}
+
+
+.side {
+    -ms-flex: 30%; /* IE10 */
+    flex: 30%;
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+.fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+}
+ 
+.footer {
+    padding: 20px;
+    background: #ddd;
+}
+ 
+@media screen and (max-width: 700px) {
+    .row {   
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .navbar a {
+        float: none;
+        width: 100%;
+    }
+}
+
+img {
+    height: 50px;
+    width: 100px;
+}
+
+p {
+    color: gold;
+    font-weight: bold;
+}

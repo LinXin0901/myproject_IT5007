@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Q&R Registration Form</title>
+
+  <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+  <script src="https://unpkg.com/@babel/standalone@7/babel.min.js"></script>
+
+  <link rel = "stylesheet" href = "style.css">
+</head>
+
+<body>
+  <div class="navbar">
+    <a href="queuing.html">QUEUE</a>
+    <a href="register.html">LOGIN/REGISTER</a>
+    <a href="search.html">SEARCH</a>
+    <a href="index.html">HOME</a>
+    <a href="index.html" class="left">Q&R</a>
+  </div>
+
+  <div id = "register_frame" class = "frame">
+      <h2>Create a New Account</h2>
+      <hr>
+
+      <form method = "post" action = "register.js">
+          <p><label class = "label_input">User name</label><input type="text" id="userName" class="text_field" placeholder="User name"/></p>
+          <p><label class = "label_input">Phone number</label><input type="text" id="phoneNumber" class="text_field" placeholder="Phone number"/></p>
+          <p><label class = "label_input">Password</label><input type="text" id="password" class="text_field" placeholder="Password"/></p>
+          <p class="note">Your password must be 8 characters, consisting of numbers (0-9) and letter (a-z or A-Z).</p>
+          <p><label class = "label_input">Gender</label><input type="text" id="gender" class="text_field" placeholder="Gender"/></p>
+          <p><label class = "label_input">Birthday</label><input type="text" id="birthday" class="text_field" placeholder="Birthday"/></p>
+
+          <div id="register_control">
+              <a id="finish_register" href="index.html">FINISH</a>
+              <p class="note">By signing up you agree to the our Privacy Policy</p>
+          </div>
+      </form>
+  </div>
+
+  <div class="footer" style="position: fixed; bottom: 0px; width: 100%;">
+    <h2>FOLLOW US</h2>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Q&R Registration Form</title>
+
+  <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+  <script src="https://unpkg.com/@babel/standalone@7/babel.min.js"></script>
+
+  <link rel = "stylesheet" href = "style.css">
+</head>
+
+<body>
+  <div id = "login_frame" class = "frame">
+      <form method = "post" action = "login.js">
+          <p><label class = "label_input">Phone number</label><input type="text" id="phoneNumber" class="text_field" placeholder="Phone number"/></p>
+          <p><label class = "label_input">Password</label><input type="text" id="password" class="text_field" placeholder="Password"/></p>
+          
+          <div id="login_control">
+              <a id="login" href="index.html">Login</a>
+              <a id="forget_password" href="#">Forget password?</a>
+          </div>
+
+          <a href="register.html">Do not have an account? Join us now!</a>
+      </form>
+  </div>
+
+</body>
+
+</html>

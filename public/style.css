@@ -41,6 +41,12 @@ body {
     flex-wrap: wrap;
 }
 
+.half {
+    -ms-flex: 50%; /* IE10 */
+    flex: 50%;
+    background-color: #f1f1f1;
+    padding: 20px;
+}
 
 .side {
     -ms-flex: 30%; /* IE10 */
@@ -52,6 +58,7 @@ body {
 .fakeimg {
     background-color: #aaa;
     width: 100%;
+    border-radius: 100px
 }
  
 .footer {
@@ -94,7 +101,7 @@ body {
 }
 
 .modal-content {
-    background: linear-gradient(#ffcece, #ffffff);
+    background: linear-gradient(#d1d0d0, #ffffff);
     margin: auto;
     padding: 200px auto;
     width: 400px;
@@ -132,7 +139,7 @@ body {
 
 .frame {
     width: 400px;
-    height: 260px;
+    height: 500px;
     padding: 13px;
 
     position: absolute;
@@ -141,9 +148,10 @@ body {
     margin-left: -200px;
     margin-top: -200px;
 
-    background-color: rbga(240,255,255,0.5);
+    background-color:#f1f1f1;
+    
 
-    border-radius: 100px;
+    border-radius: 10px;
     text-align: center;
 }
 

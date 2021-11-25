@@ -1,0 +1,57 @@
+scalar GraphQLDate
+
+enum StatusType {
+  New
+  Assigned
+  Fixed
+  Closed
+}
+
+type Issue {
+  _id: ID!
+  id: Int!
+  name: String!
+  phoneNum: String
+  created: GraphQLDate!
+  password: String!
+  gender: String
+  birth: String
+}
+
+type Store {
+  _id: ID!
+  id: Int!
+  name: String!
+  contactNum: String
+  location: String
+  openHour: String
+  pic: String
+  queue: Int
+}
+
+input IssueInputs {
+  name: String!
+  phoneNum: String!
+  password: String!
+  gender: String
+  birth: String
+}
+
+input IssueInput {
+  id: Int!
+  phoneNum: String = "12345678"
+}
+
+##### Top level declarations
+
+type Query {
+  about: String!
+  issueList: [Issue!]!
+  storeList: [Store!]!
+}
+
+type Mutation {
+  setAboutMessage(message: String!): String
+  issueAdd(issue: IssueInputs!): Issue!
+  issueDelete(issue: IssueInput!): Issue
+}

@@ -16,6 +16,9 @@ type Issue {
   password: String!
   gender: String
   birth: String
+  distance: Int
+  comment: Int
+  credit: Int
 }
 
 type Store {
@@ -29,12 +32,17 @@ type Store {
   queue: Int
 }
 
+input StoreInput {
+  name: String!
+}
+
 input IssueInputs {
   name: String!
   phoneNum: String!
   password: String!
   gender: String
   birth: String
+  distance: Int
 }
 
 input IssueInput {
@@ -48,6 +56,7 @@ type Query {
   about: String!
   issueList: [Issue!]!
   storeList: [Store!]!
+  storeFind(store: StoreInput!): Store!
 }
 
 type Mutation {

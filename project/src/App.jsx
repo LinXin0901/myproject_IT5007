@@ -151,7 +151,7 @@ class IssueList extends React.Component {
   async loadData() {
     const query = `query {
       issueList {
-        id name phoneNum created password gender birth
+        id name phoneNum created password gender birth distance comment credit
       }
     }`;
 
@@ -233,6 +233,7 @@ class StoreList extends React.Component {
   constructor() {
     super();
     this.state = { stores: [] };
+    this.search = this.search.bind(this);
   }
 
   componentDidMount() {
@@ -252,11 +253,25 @@ class StoreList extends React.Component {
     }
   }
 
+  async search(store) {
+    const query = `query storeFind($store: StoreInput!) {
+       storeFind(store: $store) {
+        id name contactNum location openHour pic queue
+      }
+    }`;
+
+    const data = await graphQLFetch(query, { store });
+    if (data) {
+      this.loadData();
+    }
+  }
+
   render() {
     return (
       <React.Fragment>
         <h3>Store test here</h3>
         <StoreTable stores={this.state.stores} />
+        <Search search={this.search} />
       </React.Fragment>
     );
   }
@@ -300,6 +315,32 @@ function StoreTable(props) {
       </tbody>
     </table>
   );
+}
+
+class Search extends React.Component {
+  constructor() {
+    super();
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(a) {
+    a.preventDefault();
+    const form = document.forms.search;
+    const store = {
+      name: form.store.value,
+    }
+    this.props.search(store);
+    form.store.value = "";
+  }
+
+  render() {
+    return (
+      <form name="search" onSubmit={this.handleSubmit}>
+        <input type="text" name="store" placeholder="storeName" />
+        <button>Search</button>
+      </form>
+    );
+  }
 }
 
 const ele = <StoreList />;

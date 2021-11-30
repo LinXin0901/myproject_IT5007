@@ -53,6 +53,11 @@ function setAboutMessage(_, { message }) {
   return aboutMessage = message;
 }
 
+async function search(_, { store }) {
+  const result = await db.collection('stores').find({name: store.name}).toArray();
+  return result;
+}
+
 async function issueList() {
   const issues = await db.collection('issues').find({}).toArray();
   return issues;

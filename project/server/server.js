@@ -40,6 +40,7 @@ const resolvers = {
     about: () => aboutMessage,
     issueList,
     storeList,
+    storeFind,
   },
   Mutation: {
     setAboutMessage,
@@ -53,8 +54,8 @@ function setAboutMessage(_, { message }) {
   return aboutMessage = message;
 }
 
-async function search(_, { store }) {
-  const result = await db.collection('stores').find({name: store.name}).toArray();
+async function storeFind(_, { store }) {
+  const result = await db.collection('stores').find({name: {$regex:store.name, $options:"i"}}).toArray();
   return result;
 }
 

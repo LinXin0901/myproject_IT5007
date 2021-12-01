@@ -246,11 +246,9 @@ class StoreList extends React.Component {
         id name contactNum location openHour pic queue
       }
     }`;
-
+    
     const data = await graphQLFetch(query);
-    if (data) {
-      this.setState({ stores: data.storeList });
-    }
+    this.setState({ stores: data.storeList });
   }
 
   async search(store) {
@@ -262,7 +260,7 @@ class StoreList extends React.Component {
 
     const data = await graphQLFetch(query, { store });
     if (data) {
-      this.loadData();
+      this.setState({ stores: data.storeFind });
     }
   }
 

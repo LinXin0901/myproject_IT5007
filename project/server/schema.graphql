@@ -56,7 +56,7 @@ type Query {
   about: String!
   issueList: [Issue!]!
   storeList: [Store!]!
-  storeFind(store: StoreInput!): Store!
+  storeFind(store: StoreInput!): [Store!]!
 }
 
 type Mutation {

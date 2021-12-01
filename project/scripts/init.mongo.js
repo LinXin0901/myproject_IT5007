@@ -14,25 +14,25 @@ db.stores.remove({});
 
 const issuesDB = [
   {
-    id: 1, name: 'Harry', phoneNum: '11111111', created: new Date('2021-10-02T08:06:29'), password: '123', gender: 'M', birth: '19980201',
+    id: 1, name: 'Harry', phoneNum: '11111111', created: new Date('2021-10-02T08:06:29'), password: '123', gender: 'M', birth: '19980201', distance: 5, comment: 2, credit: 12,
   },
   {
-    id: 2, name: 'Henry', phoneNum: '22222222', created: new Date('2021-10-02T08:07:31'), password: '456', gender: 'M', birth: '19980401',
+    id: 2, name: 'Henry', phoneNum: '22222222', created: new Date('2021-10-02T08:07:31'), password: '456', gender: 'M', birth: '19980401', distance: 3, comment: 2, credit: 9,
   },
   {
-    id: 3, name: 'John', phoneNum: '33333333', created: new Date('2021-10-02T08:11:14'), password: '789', gender: 'M', birth: '19980601',
+    id: 3, name: 'John', phoneNum: '33333333', created: new Date('2021-10-02T08:11:14'), password: '789', gender: 'M', birth: '19980601', distance: 6, comment: 1, credit: 7,
   }
 ];
 
 const storesDB = [
   {
-    id: 1, name: 'Berger King', contactNum: '11111111', location: 'Jurong East', openHour: '8am8pm', pic: '/imgsrc/Burger_king', queue: 1,
+    id: 1, name: 'Berger King', contactNum: '11111111', location: 'Jurong East', openHour: '8am8pm', pic: '/imgsrc/Burger_king', queue: [],
   },
   {
-    id: 2, name: 'McDonald', contactNum: '22222222', location: 'Clementi', openHour: '8am10pm', pic: '/imgsrc/mcdonald', queue: 2,
+    id: 2, name: 'McDonald', contactNum: '22222222', location: 'Clementi', openHour: '8am10pm', pic: '/imgsrc/mcdonald', queue: [],
   },
   {
-    id: 3, name: 'Korean Cuisine', contactNum: '33333333', location: 'Jurong West', openHour: '8am9pm', pic: '/imgsrc/Collin', queue: 3,
+    id: 3, name: 'Korean Cuisine', contactNum: '33333333', location: 'Jurong West', openHour: '8am9pm', pic: '/imgsrc/Collin', queue: [],
   }
 ];
 
@@ -54,6 +54,9 @@ db.issues.createIndex({ created: 1 });
 db.issues.createIndex({ password: 1 });
 db.issues.createIndex({ gender: 1 });
 db.issues.createIndex({ birth: 1 });
+db.issues.createIndex({ distance: 1 });
+db.issues.createIndex({ comment: 1 });
+db.issues.createIndex({ credit: 1 });
 
 db.stores.createIndex({ id: 1 }, { unique: true });
 db.stores.createIndex({ name: 1 });
